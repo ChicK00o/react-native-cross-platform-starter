@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 export const Home = () => {
   const { t } = useTranslation();
   const { theme } = useThemeSystem();
-  const [items, setItems] = React.useState([
+  const [items] = React.useState([
     { name: 'TURQUOISE', code: '#1abc9c' },
     { name: 'EMERALD', code: '#2ecc71' },
     { name: 'PETER RIVER', code: '#3498db' },
