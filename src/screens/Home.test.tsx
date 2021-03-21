@@ -2,7 +2,7 @@ import { render } from '@testing-library/react-native';
 import React from 'react';
 import 'react-native';
 import { Home } from 'src/screens/Home';
-import { ThemeProvider } from './../contexts/ThemeContext'
+import { ThemeProvider } from '../contexts/ThemeContext'
 
 describe('Home', () => {
   const pageTree = (

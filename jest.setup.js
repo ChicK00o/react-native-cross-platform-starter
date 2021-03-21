@@ -1,6 +1,7 @@
 import 'isomorphic-fetch';
 import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 import 'react-native-gesture-handler/jestSetup';
+import React from 'react'
 
 jest.useFakeTimers();
 jest.runAllTimers();
@@ -13,6 +14,8 @@ jest.mock('react-native-bootsplash', () => {
     show: jest.fn(),
   };
 });
+
+jest.mock('react-native-super-grid/FlatGrid', () => () => <></>);
 
 jest.mock('react-native-reanimated', () => {
   const Reanimated = require('react-native-reanimated/mock');
