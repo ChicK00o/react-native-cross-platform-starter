@@ -15,6 +15,12 @@ const styles = StyleSheet.create({
     padding: 10,
     height: 150,
   },
+  itemContainer2: {
+    justifyContent: 'flex-end',
+    borderRadius: 5,
+    padding: 10,
+    height: 300,
+  },
   itemName: {
     fontSize: 16,
     color: '#fff',
@@ -37,26 +43,26 @@ export const Home = () => {
   const { t } = useTranslation();
   const { theme } = useThemeSystem();
   const [items] = React.useState([
-    { name: 'TURQUOISE', code: '#1abc9c' },
-    { name: 'EMERALD', code: '#2ecc71' },
-    { name: 'PETER RIVER', code: '#3498db' },
-    { name: 'AMETHYST', code: '#9b59b6' },
-    { name: 'WET ASPHALT', code: '#34495e' },
-    { name: 'GREEN SEA', code: '#16a085' },
-    { name: 'NEPHRITIS', code: '#27ae60' },
-    { name: 'BELIZE HOLE', code: '#2980b9' },
-    { name: 'WISTERIA', code: '#8e44ad' },
-    { name: 'MIDNIGHT BLUE', code: '#2c3e50' },
-    { name: 'SUN FLOWER', code: '#f1c40f' },
-    { name: 'CARROT', code: '#e67e22' },
-    { name: 'ALIZARIN', code: '#e74c3c' },
-    { name: 'CLOUDS', code: '#ecf0f1' },
-    { name: 'CONCRETE', code: '#95a5a6' },
-    { name: 'ORANGE', code: '#f39c12' },
-    { name: 'PUMPKIN', code: '#d35400' },
-    { name: 'POMEGRANATE', code: '#c0392b' },
-    { name: 'SILVER', code: '#bdc3c7' },
-    { name: 'ASBESTOS', code: '#7f8c8d' },
+    { name: 'TURQUOISE', code: '#1abc9c', scale: 2},
+    { name: 'EMERALD', code: '#2ecc71' , scale: 1},
+    { name: 'PETER RIVER', code: '#3498db' , scale: 1},
+    { name: 'AMETHYST', code: '#9b59b6' , scale: 2},
+    { name: 'WET ASPHALT', code: '#34495e' , scale: 1},
+    { name: 'GREEN SEA', code: '#16a085' , scale: 1},
+    { name: 'NEPHRITIS', code: '#27ae60' , scale: 2},
+    { name: 'BELIZE HOLE', code: '#2980b9' , scale: 1},
+    { name: 'WISTERIA', code: '#8e44ad' , scale: 1},
+    { name: 'MIDNIGHT BLUE', code: '#2c3e50' , scale: 2},
+    { name: 'SUN FLOWER', code: '#f1c40f' , scale: 1},
+    { name: 'CARROT', code: '#e67e22' , scale: 1},
+    { name: 'ALIZARIN', code: '#e74c3c' , scale: 2},
+    { name: 'CLOUDS', code: '#ecf0f1' , scale: 1},
+    { name: 'CONCRETE', code: '#95a5a6' , scale: 1},
+    { name: 'ORANGE', code: '#f39c12' , scale: 2},
+    { name: 'PUMPKIN', code: '#d35400' , scale: 1},
+    { name: 'POMEGRANATE', code: '#c0392b' , scale: 1},
+    { name: 'SILVER', code: '#bdc3c7' , scale: 2},
+    { name: 'ASBESTOS', code: '#7f8c8d' , scale: 1},
   ]);
 
   return (
@@ -69,7 +75,7 @@ export const Home = () => {
       // fixed
       spacing={10}
       renderItem={({ item }) => (
-        <View style={[styles.itemContainer, { backgroundColor: item.code }]}>
+        <View style={[item.scale === 1 ? styles.itemContainer : styles.itemContainer2, { backgroundColor: item.code }]}>
           <Text style={styles.itemName}>{item.name}</Text>
           <Text style={styles.itemCode}>{item.code}</Text>
         </View>
